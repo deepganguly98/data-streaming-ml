@@ -11,7 +11,7 @@ from kafka import KafkaProducer
 
 my_producer = KafkaProducer(bootstrap_servers = ['localhost:9092'],value_serializer = lambda x:dumps(x).encode('utf-8'))
 
-for i in range(0,500):
+for i in range(0,testX.shape[0]):
     im = Image.fromarray(np.uint8(trainX[i])).convert('RGB')
     print(i," ",type(im))
     # im.show()

@@ -32,8 +32,7 @@ for message in my_consumer:
     img = img / 255.0
     pred = model.predict(img)
     x = np.argmax(pred)
-    print(i,"-",type(img))
-    print("Predicted image = ",class_names[x])
+    print(i,"-",type(img)," Predicted Label = ",class_names[x])
     i=i+1
     
 # decodeit.close()
