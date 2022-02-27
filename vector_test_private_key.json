@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "heroic-arbor-342611",
+  "private_key_id": "c6d0be68620b2fb9222b85c7e4d113ffdc9283ed",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCP8+eT5WMgNamV\n7H+6Y4qKGV57ZvWvJdXy95WGhVihfFsfZ8AGFsD9IdmdYVFMC1/bF0APlDn/Z1aC\n1z6NTKfkFp5CQnWdsg9ECEukketVWOuOpnrLJTYHyy75aQLL0B1T6MbkYcWTVQ8z\nMF743lces4u2iqxeI5J2R4FVkf7/LUKRJ+xB/3JXqXZqB/wI9od0ZEzy2chKTb9V\nE5yZcocbbfQhBvJqGYU6w4DR4LwsZ0ulOslGWrZpf1cbFjIFlmOQlZ6gmGTVBIy4\nEBIkLbwueHKBJIwf5WuwW70y0xwwR3NLRpZzbOs4m1umGP/1lzVQy+1WBAczCs6A\nn9LZ43lFAgMBAAECggEAEAXjUTI/eBqZA4PVTMsfJNOBkYVKlAIHYDnANj65+JGV\nt/dtp4/ZT+O4a/zk1mzOsN2T5xgF46CeP8aTIxm0912wJGpu2oxzCAzPVKRcWD3j\nTFfKA7oi2ze5xQ+z/LkvxoL6vnmGiyl03WsFKzjeZB+yjbE+UeUuPIWlhv+O7Vqy\n2JTdiwZVpW9ZxZgNoxvcrs2z89hVF2wyYi3RWEVgtjObDJxa8hea5lvgbXdVlv1F\n/D+rkiIGj/+F0JAqko7WOrq/IoeRPd2N83efMLB6QWlx3XirtsipOJRNT5wI3jUS\nfHwknL3GaSlGo9c2yjquto063h7e0xttqQFWwofbeQKBgQDCjHHCPjDGA1pBzfIL\nsAItuuTxCv5rcgYR4TYzw74bZbE8uO62tzc8Ga0j1V5NhV4V0bjvQOzMpfPvpHn7\nqc2Pkx1OU5zOK/r7kD6wOCMotuSzfMCfCkezPU3orD9IYPTknISN3HkT2GsvhgxG\nfaShnC8v36nBpdQzflEkB+uZOQKBgQC9bC/SKVylyt1qZI5WW/j7PNk73Qm7hM7m\nhzQHXhs1/MX2roo3NWeN7Em0PmFIxCap3yKmECWoNTpKo7uOGAEOQsxpawrPRxJU\nT57TD+R3V+XkD8AsGMmmHz/XtGyO68/aTIItVjweyzDxUBJjNcv+UiHqNAsepGj/\n3ugV+VkcbQKBgGkvF75Gc4ZLf7v+RfRNuA/TcT5ljEK5RlDaa7y3Awy7AYVsExxU\nmJd05mhuTusoxUKUviEVADJxMx8I1S7ckpgimQClMi1CGBN03H/YCiJUJ/hm5ZnX\nLAbbiUjX/+r5CM6lVQGCBzBUnTb3iaF/Asihsd13VsetCbrBe8s4QQf5AoGARohJ\nSjUylV1zktE8mvWGQW7H6N2GaTernvVLL08gTLsBr7gQKTyOga8xRpdPvDulte0r\nRrCOhRLE0NQk22Uex4Oh/8Lm9IWfUpuPJUIurS2ioYgn44ObWmsaZ6R8I7+01rFU\na7NHkaPRZpmNLznx6pIEpOOaHF/V5SjIPJ5rSwUCgYBy2N07PeAXYvXq/nishhk6\nIwSxglwkRj4iAFF2/DJ+1i6fP/miQuDZYY1ot5V6+IDKM2Z/0q4BdUTRvwt8ZtnJ\n4QxoNSYhm0jqDkOMuo8UjVEU7cchJDTGmW8HMTNol0RwSoGv9NJf4ahRsXwpCYEv\nCiqJ+g3Hoy5GN5PgAAty3w==\n-----END PRIVATE KEY-----\n",
+  "client_email": "vector-pubsub-test-service-acc@heroic-arbor-342611.iam.gserviceaccount.com",
+  "client_id": "114593625933599837766",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/vector-pubsub-test-service-acc%40heroic-arbor-342611.iam.gserviceaccount.com"
+}
