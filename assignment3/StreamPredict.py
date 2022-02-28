@@ -16,21 +16,6 @@ from tqdm import tqdm
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
-(trainX, trainY) , (testX, testY) = fashion_mnist.load_data()
-model = load_model('/Users/deep98/Desktop/vector-test/assignment3/mnist_fashion_predict.h5')
-
-credentials_path = '/Users/deep98/Desktop/vector-test/vector_test_private_key.json'
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credentials_path
-publisher = pubsub_v1.PublisherClient()
-topic_path = 'projects/heroic-arbor-342611/topics/predict'
-timeout = 5.0
-subscriber = pubsub_v1.SubscriberClient()
-subscription_path = 'projects/heroic-arbor-342611/subscriptions/predict-sub'
-
-my_producer = KafkaProducer(bootstrap_servers = ['localhost:9092'],value_serializer = lambda x:dumps(x).encode('utf-8'))
-my_consumer = KafkaConsumer('predict',bootstrap_servers ='localhost : 9092',auto_offset_reset = 'latest')
-print("model loaded and brokers configured successfully.")
-
 def img_conv(imgarr):
     im = Image.fromarray(np.uint8(imgarr)).convert('RGB')
     im_file = BytesIO()
@@ -120,14 +105,43 @@ def consume(choice):
         pubsub_consume()
 
 if __name__ == '__main__':
+
     my_parser = argparse.ArgumentParser(description='Choose message broker')
     my_parser.add_argument('choice',type=int, help="1 - choose Apacha Kafka as message broker \n2 - choose Google Pub/Sub as message broker")
     args = my_parser.parse_args()
     choice = args.choice
+
     if choice == 1:
         print("Broker - Apache Kafka")
+        os.system("brew services start kafka")
+        os.system("brew services start zookeeper")
+        os.system("kafka-topics --create --topic predict --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1")
+        # os.system("kafka-topics --delete --topic predict --bootstrap-server localhost:9092")
+        my_producer = KafkaProducer(bootstrap_servers = ['localhost:9092'],value_serializer = lambda x:dumps(x).encode('utf-8'))
+        my_consumer = KafkaConsumer('predict',bootstrap_servers ='localhost : 9092',auto_offset_reset = 'latest')
+
     elif choice == 2:
         print("Broker - Google Pub/Sub")
+        credentials_path = 'vector_test_private_key.json'
+        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credentials_path
+        publisher = pubsub_v1.PublisherClient()
+        topic_path = 'projects/heroic-arbor-342611/topics/predict'
+        timeout = 5.0
+        subscriber = pubsub_v1.SubscriberClient()
+        subscription_path = 'projects/heroic-arbor-342611/subscriptions/predict-sub'
+
+
+    model = load_model('assignment1/mnist_fashion_predict.h5')
+    (trainX, trainY) , (testX, testY) = fashion_mnist.load_data()
+    print("model loaded and brokers configured successfully.")
+
+    # print(os.getcwd())
+    # os.system("brew services start kafka")
+    # os.system("brew services start zookeeper")
+    # os.system("kafka-topics --create --topic predict --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1")
+    # os.system("kafka-topics --delete --topic predict --bootstrap-server localhost:9092")
+    # os.system("brew services stop kafka")
+    # os.system("brew services stop zookeeper")
 
     t_producer = threading.Thread(target=produce, args = (choice,))
     t_consumer = threading.Thread(target=consume, args = (choice,))
@@ -135,6 +149,8 @@ if __name__ == '__main__':
     t_consumer.setDaemon(True)
     t_producer.start()
     t_consumer.start()
+
+
     while True:
         pass
     # t_producer.join()

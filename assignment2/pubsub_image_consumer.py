@@ -11,7 +11,7 @@ timeout = 5.0
 subscriber = pubsub_v1.SubscriberClient()
 subscription_path = 'projects/heroic-arbor-342611/subscriptions/predict-sub'
 
-img = open("new_file_pubsub.png","wb")
+img = open("assignment2/new_file_pubsub.png","wb")
 
 def callback(message):
 	print(f'Received message.')
