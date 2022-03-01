@@ -88,7 +88,7 @@ if uploaded_file is not None:
         img = load_image(uploaded_file.name)
         prediction = model.predict(img,callbacks=[tqdm_callback])
 
-        # os.remove(uploaded_file.name)
+        os.remove(uploaded_file.name)
 
         # deleting uploaded saved picture after prediction
 
