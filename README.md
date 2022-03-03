@@ -1,5 +1,5 @@
-# vector-test
-Private repo for assignments by Vector-AI which primarily focuses on establishing data pipelines to consume deep learning service.
+# Data Streaming and continous prediciton
+This reporisitory primarily focuses on establishing data pipelines to consume deep learning service.
 
 ## Assignment 1
 Implenting a CNN Multiclass Image Classifer for MNIST Fasion dataset and deploying model as a Web Application using streamlit.
